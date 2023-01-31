@@ -3,13 +3,6 @@
     "description": "table of content",
     "license": "mit",
     "minimum-stability": "dev",
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Bickyraj\\Toc\\TocServiceProvider"
-            ]
-        }
-    },
     "autoload": {
         "psr-4": {
             "Bickyraj\\Toc\\": "src/"
