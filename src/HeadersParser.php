@@ -17,7 +17,8 @@ final class HeadersParser
     public function getParsedHeaders()
     {
         $patternString = '(' . implode('|', $this->tags) . ')';
-        $pattern = "~<{$patternString}([^>]*)>(.{5, 50})</\s*\g1\s*>~i";
+        // $pattern = "~<{$patternString}([^>]*)>(.{5, 50})</\s*\g1\s*>~i";
+        $pattern = "~<{$patternString}([^>]*)>(.{4,50})</\s*\g1\s*>~i";
         preg_replace_callback($pattern, [$this, 'handleMatchedTag'], $this->text);
         $this->validateHeadersStructure();
         $this->addHeaderId();
